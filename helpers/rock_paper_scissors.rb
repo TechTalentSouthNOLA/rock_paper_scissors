@@ -9,24 +9,10 @@ module RockPaperScissorsHelper
     ['scissors', 'paper']
   ]
 
-  def play
-    human_move = human_select_move
-    computer_move = computer_select_move
-    # binding.pry
-    puts get_winner(human_move, computer_move)
-  end
-
   private
 
-  def human_select_move
-    puts 'Rock, paper, or scissors?'
-    gets.chomp.downcase
-  end
-
   def computer_select_move
-    computer_move = PLAYS.sample
-    puts "Computer chose #{computer_move}."
-    computer_move
+    PLAYS.sample
   end
 
   def get_winner(human_move, computer_move)
